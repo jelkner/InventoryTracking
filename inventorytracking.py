@@ -19,11 +19,11 @@ class Footwear:
       >>> print(f2)
       Hightop (size 10)
     """
-    def __init__(self, style, size, sku):
+    def __init__(self, style, size, sku, shoetype='Unspecified'):
         self.style = style
         self.size = size
         self.sku = sku
-        self.type = 'Unspecified'
+        self.type = shoetype
 
     def print_size(self):
         if int(self.size) == self.size:
@@ -40,12 +40,44 @@ class Boot(Footwear):
       >>> print(b)
       Boot - Hiking (size 11-1/2)
     """
-    def __init__(self, style, size, sku):
-        Footwear.__init__(self, style, size, sku)
-        self.type = 'Boot'
+    def __init__(self, style, size, sku, shoetype='Boot'):
+        Footwear.__init__(self, style, size, sku, shoetype)
 
     def __str__(self):
-        return 'Boot - {0}'.format(Footwear.__str__(self))
+        return '{0} - {1}'.format(self.type, Footwear.__str__(self))
+
+
+class Shoe(Footwear):
+    """
+      >>> s = Shoe('Generic', 9.5, '1234-23')
+      >>> print(s)
+      Shoe - Generic (size 9-1/2)
+    """
+    def __init__(self, style, size, sku, shoetype='Shoe'):
+        Footwear.__init__(self, style, size, sku, shoetype)
+
+    def __str__(self):
+        return '{0} - {1}'.format(self.type, Footwear.__str__(self))
+
+
+class DressShoe(Shoe):
+    """
+      >>> ds = DressShoe('Sling-back', 8.5, '1234-43')
+      >>> print(ds)
+      Dress Shoe - Sling-back (size 8-1/2)
+    """
+    def __init__(self, style, size, sku, shoetype='Dress Shoe'):
+        Shoe.__init__(self, style, size, sku, shoetype)
+
+
+class CasualShoe(Shoe):
+    """
+      >>> cs = CasualShoe('Moccasin', 12.5, '1234-62')
+      >>> print(cs)
+      Casual Shoe - Moccasin (size 12-1/2)
+    """
+    def __init__(self, style, size, sku, shoetype='Casual Shoe'):
+        Shoe.__init__(self, style, size, sku, shoetype)
 
 
 if __name__ == '__main__':
