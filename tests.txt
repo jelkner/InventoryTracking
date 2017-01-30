@@ -42,3 +42,36 @@ Items should be inserted in order of sku number
   Bin A:
     SKU 12345-27: 4320
     SKU 12345-45: 500
+  >>> a_bin.add(BinItem('12345-32', 29))
+  >>> print(a_bin)
+  Bin A:
+    SKU 12345-27: 4320
+    SKU 12345-32: 29
+    SKU 12345-45: 500
+  >>> a_bin.add(BinItem('12345-15', 333))
+  >>> print(a_bin)
+  Bin A:
+    SKU 12345-15: 333
+    SKU 12345-27: 4320
+    SKU 12345-32: 29
+    SKU 12345-45: 500
+  >>> a_bin.add(BinItem('12345-97', 2343))
+  >>> print(a_bin)
+  Bin A:
+    SKU 12345-15: 333
+    SKU 12345-27: 4320
+    SKU 12345-32: 29
+    SKU 12345-45: 500
+    SKU 12345-97: 2343
+
+Finally, if an item which is already in the bin is added, only the quantity
+should change.
+
+  >>> a_bin.add(BinItem('12345-32', 100))
+  >>> print(a_bin)
+  Bin A:
+    SKU 12345-15: 333
+    SKU 12345-27: 4320
+    SKU 12345-32: 129
+    SKU 12345-45: 500
+    SKU 12345-97: 2343

@@ -25,7 +25,17 @@ class Bin:
         return s
 
     def add(self, item):
-        self.contents.append(item)
+        for index, value in enumerate(self.contents):
+            if value.sku == item.sku:
+                value.quantity += item.quantity
+                break
+            if value.sku < item.sku:
+                continue
+            else:
+                self.contents.insert(index, item)
+                break
+        else:
+            self.contents.append(item)
 
 
 if __name__ == '__main__':
