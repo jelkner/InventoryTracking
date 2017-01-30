@@ -1,12 +1,6 @@
 class BinItem:
     """
-      >>> item = BinItem('12345-27', 2136)
-      >>> item.sku
-      '12345-27'
-      >>> item.quantity
-      2136
-      >>> print(item)
-      SKU 12345-27: 2136
+      A warehouse bin item consisting of a sku number and quantity.
     """
     def __init__(self, sku, quantity):
         self.sku = sku
@@ -18,22 +12,7 @@ class BinItem:
 
 class Bin:
     """
-      >>> a_bin = Bin('A')
-      >>> a_bin.name
-      'A'
-      >>> a_bin.contents
-      []
-      >>> print(a_bin)
-      Bin A:
-      >>> a_bin.add(BinItem('12345-45', 500))
-      >>> print(a_bin)
-      Bin A:
-        SKU 12345-45: 500
-      >>> a_bin.add(BinItem('12345-27', 4320))
-      >>> print(a_bin)
-      Bin A:
-        SKU 12345-27: 4320
-        SKU 12345-45: 500
+      A location for storing BinItems.
     """
     def __init__(self, name):
         self.name = name
@@ -51,4 +30,4 @@ class Bin:
 
 if __name__ == '__main__':
     import doctest
-    doctest.testmod()
+    doctest.testfile("tests.txt")
