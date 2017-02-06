@@ -6,3 +6,11 @@ and to read and write the catalog to a file so that the same catalog can be
 used repeatedly. Let's choose some names for the functions that will do this.
 
   >>> from main import make_catalog, get_catalog, save_catalog
+
+Now we need to be able to make a catalog, save it, and read it back in.
+
+  >>> cat1 = make_catalog(5)
+  >>> save_catalog(cat1, 'cat.dat')
+  >>> cat2 = get_catalog('cat.dat')
+  >>> cat1 == cat2
+  True
