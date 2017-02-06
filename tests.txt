@@ -64,8 +64,8 @@ Items should be inserted in order of sku number
     SKU 12345-45: 500
     SKU 12345-97: 2343
 
-Finally, if an item which is already in the bin is added, only the quantity
-should change.
+If an item which is already in the bin is added, only the quantity should
+change.
 
   >>> a_bin.add(BinItem('12345-32', 100))
   >>> print(a_bin)
@@ -75,3 +75,11 @@ should change.
     SKU 12345-32: 129
     SKU 12345-45: 500
     SKU 12345-97: 2343
+
+
+main.py
+=======
+
+We will need to be able to generate a catalog of footwear for testing purposes.
+
+

@@ -3,14 +3,12 @@ from footwear import Boot, DressShoe, CasualShoe
 
 
 def make_catalog(n):
-    styles = [["Cowboy", "Hiking", "Rain", "Riding"],
-              ["Loafer", "Oxford", "Pump", "Sling-back", "Wing-tip"],
-              ["Athletic", "Hightop", "Moccasin", "Sandal"]]
+    styles = (("Cowboy", "Hiking", "Rain", "Riding"),
+              ("Loafer", "Oxford", "Pump", "Sling-back", "Wing-tip"),
+              ("Athletic", "Hightop", "Moccasin", "Sandal"))
 
-    sizes = []
-    for s in range(5, 14):
-        sizes += [s, s + 0.5]
-    sizes.append(14)
+    sizes = (5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5,
+             12, 12.5, 13, 13.5, 14)
 
     catalog = []
 

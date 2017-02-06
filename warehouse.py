@@ -1,7 +1,5 @@
 class BinItem:
-    """
-      A warehouse bin item consisting of a sku number and quantity.
-    """
+    """A warehouse bin item consisting of a sku number and quantity."""
     def __init__(self, sku, quantity):
         self.sku = sku
         self.quantity = quantity
@@ -11,9 +9,7 @@ class BinItem:
 
 
 class Bin:
-    """
-      A location for storing BinItems.
-    """
+    """A location for storing BinItems."""
     def __init__(self, name):
         self.name = name
         self.contents = []
