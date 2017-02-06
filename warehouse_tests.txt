@@ -1,0 +1,8 @@
+main.py
+=======
+
+We will need to be able to generate a catalog of footwear for testing purposes,
+and to read and write the catalog to a file so that the same catalog can be
+used repeatedly. Let's choose some names for the functions that will do this.
+
+  >>> from main import make_catalog, get_catalog, save_catalog

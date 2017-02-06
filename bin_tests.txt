@@ -77,9 +77,3 @@ change.
     SKU 12345-97: 2343
 
 
-main.py
-=======
-
-We will need to be able to generate a catalog of footwear for testing purposes.
-
-

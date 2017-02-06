@@ -28,7 +28,14 @@ def make_catalog(n):
     return catalog
 
 
+def get_catalog(fname):
+    """Read catalog from json encoded fname file."""
+
+
+def save_catalog(catalog, fname):
+    """Write catalog to json encoded fname file."""
+
+
 if __name__ == '__main__':
-    catalog = make_catalog(20)
-    for shoe in catalog:
-        print(shoe)
+    import doctest
+    doctest.testfile("warehouse_tests.txt")
