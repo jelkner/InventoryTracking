@@ -12,14 +12,8 @@ Now we need to be able to make a catalog, save it, and read it back in.
   >>> cat1 = make_catalog(5)
   >>> save_catalog(cat1, 'cat.dat')
   >>> cat2 = get_catalog('cat.dat')
-  >>> cat1 == cat2
+
+Now we need to verify that the two catalogs contain the 'same' stuff.
+
+  >>> cat1[0] == cat2[0]
   True
-
-In between, we need to know that the catalog contains footwear type objects.
-
-   >>> 'size' in cat1[2].__dict__.keys()
-   True
-   >>> 'type' in cat1[0].__dict__.keys()
-   True
-   >>> 'sku' in cat1[4].__dict__.keys()
-   True

@@ -18,6 +18,12 @@ class Footwear:
       Sling-back (size 8½)
       >>> print(f2)
       Hightop (size 10)
+      >>> f3 = Footwear('Hightop', 10, '1234-19')
+      >>> f4 = Footwear('Lowtop', 12, '1234-19')
+      >>> f2 == f3
+      True
+      >>> f2 == f4
+      False
     """
     def __init__(self, style, size, sku, shoetype='Unspecified'):
         self.style = style
@@ -32,6 +38,10 @@ class Footwear:
 
     def __str__(self):
         return '{0} ({1})'.format(self.style, self.print_size())
+
+    def __eq__(self, other):
+        return self.type == other.type and self.style == other.style and \
+               self.size == other.size and self.sku == other.sku
 
 
 class Boot(Footwear):
